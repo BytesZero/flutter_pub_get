@@ -3,14 +3,10 @@ name: Flutter CI
 # This workflow is triggered on pushes to the repository.
 
 on:
+  push:
   schedule:
   # * is a special character in YAML so you have to quote this string
   - cron:  '5 * * * *'
-#   push:
-#     branches:
-#     - develop
-#     - master
-#     - 2x
 jobs:
   build:
     # This job will run on macos virtual machine
