@@ -7,7 +7,7 @@ on:
   
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '1,7,14,25,30,40,48,57 * * * *'
+    - cron:  '*/5 * * * *'
 jobs:
   build:
     # This job will run on macos virtual machine
