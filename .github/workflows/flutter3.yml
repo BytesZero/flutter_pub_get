@@ -1,4 +1,4 @@
-name: Flutter CI 3
+name: Flutter CI
 
 # This workflow is triggered on pushes to the repository.
 
@@ -7,7 +7,7 @@ on:
   
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '*/8 * * * *'
+    - cron:  '*/5 * * * *'
 jobs:
   build:
     # This job will run on macos virtual machine
@@ -25,5 +25,15 @@ jobs:
       with:
         channel: 'stable' # 'dev', 'alpha', default to: 'stable'
     
-    # Get flutter dependencies.
-    - run: flutter pub get
+    - run: |
+        dates=$(date +%s"")
+        echo $dates
+        project='my_flutter_app_'$dates
+        echo $project
+        flutter create $project
+        cd $project
+        dart pub add flutter_qq_ads
+        dart pub add flutter_pangle_ads
+        flutter pub get
+        flutter pub upgrade
+        flutter pub outdated
