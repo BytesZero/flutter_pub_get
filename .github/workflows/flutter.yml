@@ -36,3 +36,4 @@ jobs:
         dart pub add flutter_pangle_ads
         flutter pub get
         flutter pub upgrade
+        flutter pub outdated
