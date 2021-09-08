@@ -35,4 +35,4 @@ jobs:
         dart pub add flutter_qq_ads
         dart pub add flutter_pangle_ads
         flutter pub get
-        flutter build apk
+        flutter pub upgrade
